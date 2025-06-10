@@ -1,7 +1,12 @@
 from concurrent import futures
 import grpc
-from pb import hello_world_pb2
-from pb import hello_world_pb2_grpc
+
+import os
+
+os.path.join(os.path.dirname(__file__), 'pb')
+
+import pb.hello_world_pb2 as hello_world_pb2
+import pb.hello_world_pb2_grpc as hello_world_pb2_grpc
 
 # レスポンスの処理
 class Greeter(hello_world_pb2_grpc.HelloWorldServiceServicer):
